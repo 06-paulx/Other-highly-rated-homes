@@ -1,12 +1,13 @@
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    database: 'otherListings'
-})
+    database: 'otherListings',
+});
 
-var imageUrls = {
+const imageUrls = {
     1: 'https://s3.us-east-2.amazonaws.com/fec20listings/house1.jpeg',
     2: 'https://s3.us-east-2.amazonaws.com/fec20listings/house2.jpeg',
     3: 'https://s3.us-east-2.amazonaws.com/fec20listings/house3.jpeg',
@@ -26,31 +27,31 @@ var imageUrls = {
     17: 'https://s3.us-east-2.amazonaws.com/fec20listings/house17.jpeg',
     18: 'https://s3.us-east-2.amazonaws.com/fec20listings/house18.jpeg',
     19: 'https://s3.us-east-2.amazonaws.com/fec20listings/house19.jpeg',
-    20: 'https://s3.us-east-2.amazonaws.com/fec20listings/house20.jpeg'
-}
+    20: 'https://s3.us-east-2.amazonaws.com/fec20listings/house20.jpeg',
+};
 
-var listingTypes = ['Entire apartment', 'Entire condominium', 'Entire house'];
+const listingTypes = ['Entire apartment', 'Entire condominium', 'Entire house'];
 
-var listingTitles = ['Great Haven in a Terrific Location', 'Sunny, Eclectic Home', 'Unbeatable Location and Price', 'Warm, Inviting Space for Your Trip', 'Cozy Space with Panoramic Views', 'Stylish Sanctuary Great Location', 'Convenient Location and Friendly Host', 'Relaxing Space for Family', 'Perfect for Family Vacation', 'Stylish, Comfortable Space for Your Stay', 'Modern Living Space Close to Downtown', 'Clean, Comfortable, and Close to Public Transit']
+const listingTitles = ['Great Haven in a Terrific Location', 'Sunny, Eclectic Home', 'Unbeatable Location and Price', 'Warm, Inviting Space for Your Trip', 'Cozy Space with Panoramic Views', 'Stylish Sanctuary Great Location', 'Convenient Location and Friendly Host', 'Relaxing Space for Family', 'Perfect for Family Vacation', 'Stylish, Comfortable Space for Your Stay', 'Modern Living Space Close to Downtown', 'Clean, Comfortable, and Close to Public Transit'];
 
-var randomImage = function () {
-    var items = Object.keys(imageUrls).length;
-    var index = Math.floor((Math.random() * items) + 1;
+const randomImage = () => {
+    let items = Object.keys(imageUrls).length;
+    let index = Math.floor((Math.random() * items) + 1);
     return imageUrls[index];
-}
+};
 
-var randomType = function () {
-    var index = Math.floor(Math.random() * listingTypes.length);
+const randomType = () => {
+    let index = Math.floor(Math.random() * listingTypes.length);
     return listingTypes[index];
-}
+};
 
-var randomTitle = function () {
-    var index = Math.floor(Math.random() * listingTitles.length);
+const randomTitle = () => {
+    let index = Math.floor(Math.random() * listingTitles.length);
     return listingTitles[index];
-}
+};
 
 
-var dbSeeding = function (query, params) {
+let dbSeeding = function (query, params) {
     return new Promise((resolve, reject) => {
         connection.query(query, params, (err, result) => {
             if (err) {
@@ -60,12 +61,12 @@ var dbSeeding = function (query, params) {
             }
         });
     });
-}
+};
 
-for (var i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i++) {
     var entries = entries || [];
-    var query = 'INSERT INTO otherListings (listing_title, listing_type, bed, listing_price, rating, reviews, image_url) VALUES (?,?,?,?,?,?,?)';
-    var params = [randomTitle(), randomType(), Math.floor(Math.random() * 5) + 1, Math.floor(Math.random() * 200), Math.floor(((Math.random() * 2) + 3)), Math.floor(((Math.random() * 75) + 13)), randomImage()];
+    let query = 'INSERT INTO otherListings (listing_title, listing_type, bed, listing_price, rating, reviews, image_url) VALUES (?,?,?,?,?,?,?)';
+    let params = [randomTitle(), randomType(), Math.floor(Math.random() * 5) + 1, Math.floor(Math.random() * 200), Math.floor(((Math.random() * 2) + 3)), Math.floor(((Math.random() * 75) + 13)), randomImage()];
 
     entries.push(dbSeeding(query, params));
 }
@@ -78,5 +79,3 @@ Promise.all(entries)
     .catch((err) => {
         console.log(err);
     });
-
-
