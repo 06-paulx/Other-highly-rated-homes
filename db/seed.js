@@ -35,7 +35,7 @@ var listingTitles = ['Great Haven in a Terrific Location', 'Sunny, Eclectic Home
 
 var randomImage = function () {
     var items = Object.keys(imageUrls).length;
-    var index = Math.floor((Math.random() * items) + 1;
+    var index = Math.floor((Math.random() * items) + 1);
     return imageUrls[index];
 }
 
