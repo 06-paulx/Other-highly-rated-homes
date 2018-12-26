@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "Other_highly_rated_homes",
   "version": "",
   "description": "",
   "author": "",
@@ -9,14 +9,26 @@
   },
   "scripts": {
     "db": "mysql -u root < ./db/schema.sql",
-    "seed": "node ./db/seed.js"
+    "seed": "node ./db/seed.js",
+    "watch": "npx webpack --w",
+    "start": "nodemon server/index.js"
   },
   "dependencies": {
-    "faker": "^4.1.0",
-    "fakr": "^0.2.5",
-    "mysql": "^2.16.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "mysql": "^2.16.0",
+    "path": "^0.12.7",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2"
   }
 }
