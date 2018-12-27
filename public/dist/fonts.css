@@ -1,0 +1,9 @@
+@font-face {
+  font-family: circular;
+  unicode-range: u+f0000-ffffd;
+  src: url('/css/airmojix-regular-1f27af8e7a11d1c944a723d089ced36e.woff2')
+      format('woff2'),
+    url('/css/airmojix-regular-80e996ff2d0973f4cccb9390f838a6f3.woff')
+      format('woff');
+  font-weight: normal;
+}
