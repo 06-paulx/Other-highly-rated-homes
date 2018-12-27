@@ -11,19 +11,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, '/../public/dist')));
 
-app.get('/otherlistings/:listingId', (req, res) => {
-  // const listingId = req.params;
-  db.getOtherListings((err, listings) => {
+app.get('/api/listing/:listingId/otherlistings', (req, res) => {
+  const listingId = parseInt(req.params.listingId);
+  const num = parseInt(req.query.num); //?x=f&y=t
+  db.getListings(listingId, num, (err, listings) => {
     if (err) {
       res.status(500).json(err);
     } else {
-      console.log(listings);
       res.status(200).json(listings);
     }
   });
 });
 
-app.get('/otherlistings/:listingId', (req, res) => {
+app.get('/listing/:listingId/otherlistings', (req, res) => {
   res.sendFile(path.join(__dirname, '/../public/dist/index.html'));
 });
 

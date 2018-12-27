@@ -1,0 +1,14 @@
+.otherListingsTitle {
+  font-size: 24px;
+}
+
+.otherListingsContainer {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+}
+
+.singleListing {
+  margin: 8px;
+}
