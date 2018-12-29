@@ -43,8 +43,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="otherListingsTitle">Other highly rated homes</div>
+      <div className="overallContainer">
+        <span className="otherListingsTitle">Other highly rated homes</span>
         <OtherListings listings={this.state.otherListings} />
 
         <ShowMore showMore={this.showMoreHomes} />

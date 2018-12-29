@@ -1,36 +1,221 @@
+body {
+  font-family: Circular, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.43;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.overallContainer {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  box-sizing: border-box;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
 .otherListingsContainer {
   font-family: Circular, Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  margin-left: -8px;
+  margin-right: -8px;
 }
 
 .otherListingsTitle {
   font-family: Circular, Helvetica, Arial, sans-serif;
   font-size: 24px;
+  color: #484848;
+  letter-spacing: normal;
+  font-weight: 800;
+  text-rendering: optimizelegibility;
 }
+
 .singleListing {
-  margin: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  box-sizing: border-box;
+  cursor: pointer;
+  min-height: 1px;
+  position: relative;
+  margin-bottom: 16px;
 }
 
 @media (min-width: 744px) {
-  /* .singleListing {
+  .singleListing {
     width: 50%;
-  } */
-  .otherListingsTitle {
-    font-size: 36px;
-    line-height: 40px;
   }
-  .otherListingsContainer {
+  .overallContainer {
     padding-right: 24px;
     padding-left: 24px;
     max-width: 696px;
   }
+  .overallContainer .otherListingsTitle {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .otherListingsContainer {
+    margin-top: 72px;
+    margin-bottom: 72px;
+  }
+}
+
+@media (min-width: 1128px) {
+  .overallContainer {
+    max-width: 1080px;
+  }
+  .singleListing {
+    width: 25%;
+    justify-content: flex-start;
+  }
 }
 
 .showMore {
-  font-family: Circular;
-  font-color: #a61d55;
+  color: #a61d55;
+  font-weight: 600;
+  line-height: 1.375em;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.showMore:hover {
+  text-decoration: underline;
+}
+
+.listingImage {
+  display: inline-block;
+  width: 270px;
+  height: 175px;
+  background-size: cover;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  overflow: hidden;
+}
+
+.listingRating {
+  display: flex;
+  flex-direction: row;
+  line-height: 21px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.reviewRatingContainer {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  box-sizing: border-box;
+  max-height: 22px;
+  line-height: normal;
+  text-overflow: ellipsis;
+  text-size-adjust: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  top: 5px;
+}
+.listingReviews {
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3333333333333333em;
+  color: rgb(72, 72, 72);
+  position: relative;
+  bottom: 3px;
+}
+
+.stars {
+  font-size: 9px;
+}
+
+.listingTitle {
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.375em;
+  color: #484848;
+}
+
+.listingPlus {
+  color: rgb(255, 255, 255);
+}
+
+.plusBackground {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: rgb(72, 72, 72);
+  display: inline-block;
+  white-space: nowrap;
+  background-color: rgb(166, 29, 85);
+  border-radius: 3.2px;
+  padding: 0px 4px;
+}
+
+.listingBedContainer {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 4px;
+  overflow: hidden;
+}
+
+.listingBed {
+  overflow-wrap: break-word;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.33333em;
+  color: rgb(166, 29, 85);
+  margin: 0px;
+}
+
+.heartContainer {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 2;
+}
+
+.heartButton {
+  background-color: transparent;
+  cursor: pointer;
+  color: buttontext;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+}
+
+.listingDetailsContainer {
+  padding-top: 8px;
+}
+
+.listingPrice {
+  line-height: 20.02px;
 }
