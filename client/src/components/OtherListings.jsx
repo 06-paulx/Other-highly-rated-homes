@@ -31,8 +31,8 @@ const heart = (
   </div>
 );
 
-const star = (
-  <span className="star">
+const getStar = key => (
+  <span className="star" key={key}>
     <svg
       viewBox="0 0 1000 1000"
       role="presentation"
@@ -69,8 +69,8 @@ const halfStar = (
   </span>
 );
 
-const greyStar = (
-  <span className="greyStar">
+const getGreyStar = key => (
+  <span className="greyStar" key={key}>
     <svg
       viewBox="0 0 1000 1000"
       role="presentation"
@@ -89,39 +89,37 @@ const greyStar = (
 );
 
 const listingRating = num => {
-  let ratings = [];
-  let i = num;
-  while (i > 0) {
-    ratings.push(star);
-    i--;
+  const stars = [];
+  for (let i = 0; i < num; i++) {
+    stars.push(getStar(i));
   }
-  return ratings.map(star => {
-    return <span className="stars">{star}</span>;
-  });
+  while (stars.length < 5) {
+    stars.push(getGreyStar(stars.length));
+  }
+  return stars;
 };
+
+// const beds = {listingObj.bed} > 1 ? {listingObj.bed} BED : {listingObj.bed} BEDS}
 
 const OtherListings = props => (
   <div className="otherListingsContainer">
     {props.listings.map((listingObj, index) => {
-      console.log(props.listings, 'OTHER');
+      // console.log(props.listings, 'OTHER');
+      const numBeds = listingObj.bed > 1 ? 'BEDS' : 'BED';
       return (
         <div key={index} className="singleListing">
+          {heart}
           <div className="imageContainer">
-            <div
-              className="listingImage"
-              style={{ backgroundImage: `url(${listingObj.image_url})` }}
-            />
+            <img src={listingObj.image_url} className="listingImage" />
           </div>
           <div className="listingDetailsContainer">
-            {heart}
             <div>
               <span className="plusBackground">
                 <span className="listingPlus">PLUS</span>
               </span>
               <span className="listingBedContainer">
                 <span className="listingBed">
-                  {' '}
-                  VERIFIED · {listingObj.bed} BED
+                  VERIFIED · {listingObj.bed} {numBeds}
                 </span>
               </span>
             </div>

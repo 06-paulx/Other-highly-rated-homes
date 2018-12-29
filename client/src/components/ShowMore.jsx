@@ -20,25 +20,23 @@ class ShowMore extends React.Component {
 
   hasSeenMore() {
     this.setState({
-      expanded: false,
+      expanded: true,
     });
   }
   render() {
-    return (
+    return this.state.expanded ? (
+      <div />
+    ) : (
       <div>
-        {this.state.expanded === true ? (
-          ''
-        ) : (
-          <div
-            className="showMore"
-            onClick={() => {
-              this.props.ShowMore();
-              this.hasSeenMore();
-            }}
-          >
-            Show more homes
-          </div>
-        )}
+        <div
+          className="showMore"
+          onClick={() => {
+            this.props.showMore();
+            this.hasSeenMore();
+          }}
+        >
+          Show more homes
+        </div>
       </div>
     );
   }
