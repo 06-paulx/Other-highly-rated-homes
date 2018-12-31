@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './Modal.jsx';
 
 const heart = (
   <div className="heartContainer">
@@ -101,49 +102,78 @@ const listingRating = num => {
 
 // const beds = {listingObj.bed} > 1 ? {listingObj.bed} BED : {listingObj.bed} BEDS}
 
-const OtherListings = props => (
-  <div className="otherListingsContainer">
-    {props.listings.map((listingObj, index) => {
-      // console.log(props.listings, 'OTHER');
-      const numBeds = listingObj.bed > 1 ? 'BEDS' : 'BED';
-      return (
-        <div key={index} className="singleListing">
-          {heart}
-          <div className="imageContainer">
-            <img src={listingObj.image_url} className="listingImage" />
-          </div>
-          <div className="listingDetailsContainer">
-            <div>
-              <span className="plusBackground">
-                <span className="listingPlus">PLUS</span>
-              </span>
-              <span className="listingBedContainer">
-                <span className="listingBed">
-                  VERIFIED · {listingObj.bed} {numBeds}
-                </span>
-              </span>
-            </div>
-            <div className="listingTitle">{listingObj.listing_title}</div>
+class OtherListings extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false,
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
 
-            <div className="listingPrice">
-              ${listingObj.listing_price} per night
-            </div>
-            <div className="reviewRatingContainer">
-              <div className="listingRating">
-                {listingRating(listingObj.rating)}
+  openModal() {
+    this.setState({
+      modalOpen: true,
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      modalOpen: false,
+    });
+  }
+
+  render() {
+    return (
+      <div className="otherListingsContainer">
+        {this.props.listings.map((listingObj, index) => {
+          // console.log(props.listings, 'OTHER');
+          const numBeds = listingObj.bed > 1 ? 'BEDS' : 'BED';
+          return (
+            <div key={index} className="singleListing">
+              <Modal
+                modalOpen={this.state.modalOpen}
+                open={this.openModal}
+                close={this.closeModal}
+                image={listingObj.image_url}
+                title={listingObj.listing_title}
+                price={listingObj.listing_price}
+              />
+              <div onClick={this.openModal}>{heart}</div>
+              <div className="imageContainer">
+                <img src={listingObj.image_url} className="listingImage" />
               </div>
-              {/* {star}star{halfStar}halfstar{greyStar}greyStar */}
-              <div className="listingReviews">{listingObj.reviews}</div>
+              <div className="listingDetailsContainer">
+                <div>
+                  <span className="plusBackground">
+                    <span className="listingPlus">PLUS</span>
+                  </span>
+                  <span className="listingBedContainer">
+                    <span className="listingBed">
+                      VERIFIED · {listingObj.bed} {numBeds}
+                    </span>
+                  </span>
+                </div>
+                <div className="listingTitle">{listingObj.listing_title}</div>
+
+                <div className="listingPrice">
+                  ${listingObj.listing_price} per night
+                </div>
+                <div className="reviewRatingContainer">
+                  <div className="listingRating">
+                    {listingRating(listingObj.rating)}
+                  </div>
+                  {/* {star}star{halfStar}halfstar{greyStar}greyStar */}
+                  <div className="listingReviews">{listingObj.reviews}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      );
-    })}
-  </div>
-);
+          );
+        })}
+      </div>
+    );
+  }
+}
 
 export default OtherListings;
-
-{
-  /* <div className="listingType">{listingObj.listing_type}</div> */
-}
