@@ -42,6 +42,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('listing', this.state.otherListings);
     return (
       <div className="overallContainer">
         <span className="otherListingsTitle">Other highly rated homes</span>

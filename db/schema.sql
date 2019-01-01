@@ -12,6 +12,7 @@ CREATE TABLE otherListings (
     listing_price INT NOT NULL,
     rating INT,
     reviews INT,
+    place VARCHAR(255),
     image_url VARCHAR(255)
 );
 

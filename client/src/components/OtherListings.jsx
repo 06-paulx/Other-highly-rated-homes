@@ -32,7 +32,10 @@ const heart = (
   </div>
 );
 
-const getStar = key => (
+const defaultStarColor = 'rgb(166, 29, 85)';
+const modalStarColor = 'rgb(0, 132, 137)';
+
+const getStar = (key, defaultStarColor) => (
   <span className="star" key={key}>
     <svg
       viewBox="0 0 1000 1000"
@@ -43,7 +46,7 @@ const getStar = key => (
         height: '1em',
         width: '1em',
         display: 'block',
-        fill: 'rgb(166, 29, 85)',
+        fill: defaultStarColor,
       }}
     >
       <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
@@ -89,10 +92,10 @@ const getGreyStar = key => (
   </span>
 );
 
-const listingRating = num => {
+const listingRating = (num, defaultStarColor) => {
   const stars = [];
   for (let i = 0; i < num; i++) {
-    stars.push(getStar(i));
+    stars.push(getStar(i, defaultStarColor));
   }
   while (stars.length < 5) {
     stars.push(getGreyStar(stars.length));
@@ -107,14 +110,27 @@ class OtherListings extends React.Component {
     super(props);
     this.state = {
       modalOpen: false,
+      imageM: '',
+      titleM: '',
+      priceM: '',
+      ratingM: '',
+      reviewsM: '',
+      placeM: '',
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal() {
+  openModal(target) {
+    console.log(target);
     this.setState({
       modalOpen: true,
+      imageM: target.image_url,
+      titleM: target.listing_title,
+      priceM: target.listing_price,
+      ratingM: target.rating,
+      reviewsM: target.reviews,
+      placeM: target.place,
     });
   }
 
@@ -136,14 +152,18 @@ class OtherListings extends React.Component {
                 modalOpen={this.state.modalOpen}
                 open={this.openModal}
                 close={this.closeModal}
-                image={listingObj.image_url}
-                title={listingObj.listing_title}
-                price={listingObj.listing_price}
+                image={this.state.imageM}
+                title={this.state.titleM}
+                rating={listingRating(this.state.ratingM, modalStarColor)}
+                reviews={this.state.reviewsM}
+                place={this.state.placeM}
               />
-              <div onClick={this.openModal}>{heart}</div>
               <div className="imageContainer">
                 <img src={listingObj.image_url} className="listingImage" />
+
+                <div onClick={() => this.openModal(listingObj)}>{heart}</div>
               </div>
+
               <div className="listingDetailsContainer">
                 <div>
                   <span className="plusBackground">
@@ -155,6 +175,7 @@ class OtherListings extends React.Component {
                     </span>
                   </span>
                 </div>
+
                 <div className="listingTitle">{listingObj.listing_title}</div>
 
                 <div className="listingPrice">
@@ -162,7 +183,7 @@ class OtherListings extends React.Component {
                 </div>
                 <div className="reviewRatingContainer">
                   <div className="listingRating">
-                    {listingRating(listingObj.rating)}
+                    {listingRating(listingObj.rating, defaultStarColor)}
                   </div>
                   {/* {star}star{halfStar}halfstar{greyStar}greyStar */}
                   <div className="listingReviews">{listingObj.reviews}</div>

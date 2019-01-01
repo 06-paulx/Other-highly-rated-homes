@@ -45,6 +45,18 @@ const listingTitles = [
   'Modern Living Space Close to Downtown',
   'Clean, Comfortable, and Close to Public Transit',
 ];
+const listingPlaces = [
+  'San Francisco,CA,United States',
+  'Boston,MA,United States',
+  'Miami,FL,United States',
+  'Los Angeles,CA,United States',
+  'Austin,TX,United States',
+  'Portland,OR,Unitred States',
+  'Chicago,IL,United States',
+  'Honolulu,HA,United States',
+  'Seattle,WA,United States',
+  'Tuson,AZ, United States',
+];
 
 const randomType = () => {
   let index = Math.floor(Math.random() * listingTypes.length);
@@ -54,6 +66,10 @@ const randomType = () => {
 const randomTitle = () => {
   let index = Math.floor(Math.random() * listingTitles.length);
   return listingTitles[index];
+};
+const randomPlaces = () => {
+  let index = Math.floor(Math.random() * listingPlaces.length);
+  return listingPlaces[index];
 };
 
 let dbSeeding = function(query, params) {
@@ -72,7 +88,7 @@ let currentQuery = Promise.resolve();
 for (let i = 0; i < 100; i++) {
   var entries = entries || [];
   let query =
-    'INSERT INTO otherListings (listing_title, listing_type, bed, listing_price, rating, reviews, image_url) VALUES (?,?,?,?,?,?,?)';
+    'INSERT INTO otherListings (listing_title, listing_type, bed, listing_price, rating, reviews, place, image_url) VALUES (?,?,?,?,?,?,?,?)';
   let params = [
     randomTitle(),
     randomType(),
@@ -80,6 +96,7 @@ for (let i = 0; i < 100; i++) {
     Math.floor(Math.random() * 200),
     Math.round(Math.random() * 2 + 3),
     Math.floor(Math.random() * 75 + 13),
+    randomPlaces(),
     imageUrls[i % imageUrls.length],
   ];
   currentQuery = currentQuery.then(
