@@ -1,24 +1,18 @@
 body {
+  margin: 0;
+}
+
+.otherListingsApp {
   font-family: circular, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  padding: 12px;
   line-height: 1.43;
-  margin-left: 12px;
-  margin-right: 12px;
 }
 
 .overallContainer {
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  margin: 48px auto;
   font-size: 14px;
   line-height: 1.43;
-  color: #484848;
-  box-sizing: border-box;
-  margin-top: 48px;
-  margin-bottom: 48px;
 }
 
 .otherListingsContainer {
@@ -37,20 +31,16 @@ body {
   font-family: circular, Helvetica, Arial, sans-serif;
   font-size: 24px;
   color: #484848;
-  letter-spacing: normal;
   font-weight: 800;
-  text-rendering: optimizelegibility;
 }
 
 .singleListing {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 0 8px;
   font-size: 14px;
   line-height: 1.43;
   color: #484848;
   box-sizing: border-box;
   cursor: pointer;
-  min-height: 1px;
   position: relative;
   margin-bottom: 19px;
   width: 50%;
@@ -71,9 +61,6 @@ body {
   }
   .otherListingsContainer {
     margin-top: 48px;
-  }
-  .smallListingOuter {
-    position: absolute;
   }
 }
 
@@ -143,8 +130,7 @@ body {
   word-wrap: break-word;
   font-size: 12px;
   font-weight: 600;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    'Helvetica Neue', sans-serif;
+
   line-height: 1.3333333333333333em;
   color: rgb(72, 72, 72);
   position: relative;
@@ -157,7 +143,7 @@ body {
 }
 
 .listingTitle {
-  margin: 0px;
+  margin: 0;
   word-wrap: break-word;
   font-size: 16px;
   font-weight: 800;
@@ -178,7 +164,6 @@ body {
   letter-spacing: normal;
   text-transform: uppercase;
   color: rgb(72, 72, 72);
-  display: inline-block;
   white-space: nowrap;
   background-color: rgb(166, 29, 85);
   border-radius: 3.2px;
@@ -233,40 +218,33 @@ body {
 } */
 
 .modal {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 45px;
   left: 50%;
-  height: 670px;
-  /* width: 40%; */
   background-color: rgb(255, 255, 255);
   box-sizing: border-box;
   padding: 32px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   width: 568px;
+  margin-bottom: 50px;
 }
 
 .modalContainer {
   position: relative;
-  width: 100%;
-  max-width: 568px;
   margin: auto;
-  padding-top: 64px;
-  padding-bottom: 64px;
   box-sizing: border-box;
 }
 
 @media (max-width: 744px) {
   .modalContainer {
-    max-width: none;
     position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    overflow-y: auto;
-    margin: 0px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
   .modal {
+    top: 0;
     max-width: none;
     overflow-y: auto;
     margin: auto;
@@ -275,7 +253,6 @@ body {
     box-sizing: border-box;
   }
   .modalBackground {
-    overflow-y: hidden;
     background: none;
   }
 }
@@ -302,7 +279,8 @@ body {
   bottom: 0px;
   left: 0px;
   overflow-y: auto;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
 }
 
 .save {
@@ -369,26 +347,16 @@ body {
 }
 
 .smallListingOuter {
-  position: absolute;
-  left: 0px;
   width: 568px;
   cursor: pointer;
-  text-align: left;
-  background: transparent;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
   padding: 24px 32px;
-  bottom: 0px;
-  top: calc(100% - 128px);
   box-shadow: rgba(0, 0, 0, 0.2) 0px -8px 20px -6px;
-  overflow-y: hidden;
-  transition: top 0.3s ease-in-out 0s;
   box-sizing: border-box;
+  margin: 0 -32px -32px;
+  margin-top: 160px;
 }
 
-@media (max-width: 744) {
+@media (max-width: 744px) {
   .smallListingOuter {
     display: none;
   }
@@ -428,10 +396,11 @@ body {
 }
 
 .modalRating {
+  font-family: circular, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: row;
-  margin-top: 8px;
+  margin-top: 12px;
   word-wrap: break-word;
   font-size: 12px;
   font-weight: 600;
@@ -443,10 +412,12 @@ body {
 
 .modalStars .star svg {
   font-size: 12px;
+  margin: 1px;
 }
 
 .modalStars .greyStar svg {
   font-size: 12px;
+  margin: 1px;
 }
 
 .modalStars {
@@ -461,6 +432,7 @@ body {
 }
 
 .modalReviews {
+  font-family: circular, Helvetica, Arial, sans-serif;
   margin: 0px;
   word-wrap: break-word;
   font-size: 14px;
@@ -468,9 +440,11 @@ body {
   line-height: 1.2857142857142858em;
   color: #484848;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 div .modalTitle {
+  font-family: circular, Helvetica, Arial, sans-serif;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -485,33 +459,101 @@ div .modalTitle {
   font-weight: 400;
   line-height: 1.2857142857142858em;
   color: #484848;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .or {
-  overflow-wrap: break-word;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28571em;
   color: rgb(118, 118, 118);
-  margin: 0px;
+  padding: 0 16px;
 }
 
 .orContainer {
-  padding-bottom: var(--spacing-rule-text-vertical, 16px);
-  padding-top: var(--spacing-rule-text-vertical, 16px);
-  padding-left: var(--spacing-rule-text-horizontal, 16px);
-  padding-right: var(--spacing-rule-text-horizontal, 16px);
+  margin-top: 16px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
-.before {
-  border-bottom-width: var(--border-rule-border-width, 1px);
-  border-bottom-color: #e4e4e4;
+.orContainer::before,
+.orContainer::after {
   content: '';
-  position: absolute;
-  border-bottom-width: 1px;
+  border-bottom: 1px solid #e4e4e4;
+  display: block;
+  bottom: 7px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.signUp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: var(--font-button-font-size, 16px);
+  line-height: var(--font-button-line-height, 24px);
+  letter-spacing: var(--font-button-letter-spacing, normal);
+  text-transform: var(--font-button-text-transform, undefined);
+  padding-top: var(--spacing-button-vertical, 10px);
+  padding-bottom: var(--spacing-button-vertical, 10px);
+  font-weight: var(--font-bold-font-weight, 800);
+  padding-left: var(--spacing-button-horizontal, 22px);
+  padding-right: var(--spacing-button-horizontal, 22px);
+  box-shadow: var(--shadow-button-level0-box-shadow, none);
+  color: #ffffff;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  background: rgb(255, 90, 95);
+  border-color: transparent;
+}
+
+.signUpLogo {
+  margin-right: 12px;
+}
+
+.line {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-bottom-width: var(--border-rule-border-width, 1px);
+  border-bottom-color: var(--color-divider, #ebebeb);
   border-bottom-style: solid;
-  border-bottom-color: rgb(228, 228, 228);
-  top: 50%;
-  right: 100%;
-  width: 5000px;
+}
+
+.modal footer {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modalFooterText {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.member {
+  margin-right: 8px;
+  word-wrap: break-word;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.375em;
+  color: #484848;
+}
+
+.logIn {
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.375em;
+  color: #008489;
+  text-align: left;
 }

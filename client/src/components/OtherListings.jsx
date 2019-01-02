@@ -35,7 +35,7 @@ const heart = (
 const defaultStarColor = 'rgb(166, 29, 85)';
 const modalStarColor = 'rgb(0, 132, 137)';
 
-const getStar = (key, defaultStarColor) => (
+const getStar = (key, color) => (
   <span className="star" key={key}>
     <svg
       viewBox="0 0 1000 1000"
@@ -46,7 +46,7 @@ const getStar = (key, defaultStarColor) => (
         height: '1em',
         width: '1em',
         display: 'block',
-        fill: defaultStarColor,
+        fill: color,
       }}
     >
       <path d="M971.5 379.5c9 28 2 50-20 67L725.4 618.6l87 280.1c11 39-18 75-54 75-12 0-23-4-33-12l-226.1-172-226.1 172.1c-25 17-59 12-78-12-12-16-15-33-8-51l86-278.1L46.1 446.5c-21-17-28-39-19-67 8-24 29-40 52-40h280.1l87-278.1c7-23 28-39 52-39 25 0 47 17 54 41l87 276.1h280.1c23.2 0 44.2 16 52.2 40z" />
@@ -122,7 +122,6 @@ class OtherListings extends React.Component {
   }
 
   openModal(target) {
-    console.log(target);
     this.setState({
       modalOpen: true,
       imageM: target.image_url,
@@ -143,21 +142,21 @@ class OtherListings extends React.Component {
   render() {
     return (
       <div className="otherListingsContainer">
+        <Modal
+          modalOpen={this.state.modalOpen}
+          open={this.openModal}
+          close={this.closeModal}
+          image={this.state.imageM}
+          title={this.state.titleM}
+          rating={listingRating(this.state.ratingM, modalStarColor)}
+          reviews={this.state.reviewsM}
+          place={this.state.placeM}
+        />
         {this.props.listings.map((listingObj, index) => {
           // console.log(props.listings, 'OTHER');
           const numBeds = listingObj.bed > 1 ? 'BEDS' : 'BED';
           return (
             <div key={index} className="singleListing">
-              <Modal
-                modalOpen={this.state.modalOpen}
-                open={this.openModal}
-                close={this.closeModal}
-                image={this.state.imageM}
-                title={this.state.titleM}
-                rating={listingRating(this.state.ratingM, modalStarColor)}
-                reviews={this.state.reviewsM}
-                place={this.state.placeM}
-              />
               <div className="imageContainer">
                 <img src={listingObj.image_url} className="listingImage" />
 

@@ -46,16 +46,16 @@ const listingTitles = [
   'Clean, Comfortable, and Close to Public Transit',
 ];
 const listingPlaces = [
-  'San Francisco,CA,United States',
-  'Boston,MA,United States',
-  'Miami,FL,United States',
-  'Los Angeles,CA,United States',
-  'Austin,TX,United States',
-  'Portland,OR,Unitred States',
-  'Chicago,IL,United States',
-  'Honolulu,HA,United States',
-  'Seattle,WA,United States',
-  'Tuson,AZ, United States',
+  'San Francisco, CA, United States',
+  'San Diego, CA, United States',
+  'Miami, FL, United States',
+  'Los Angeles,CA, United States',
+  'Austin, TX, United States',
+  'Portland, OR, Unitred States',
+  'Santa Monica, CA, United States',
+  'San Jose, CA, United States',
+  'Seattle, WA, United States',
+  'Hollywood, CA, United States',
 ];
 
 const randomType = () => {
