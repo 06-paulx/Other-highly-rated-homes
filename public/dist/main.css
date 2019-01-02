@@ -97,7 +97,6 @@ body {
   position: relative;
   width: 100%;
   z-index: 0;
-
   overflow: hidden;
 }
 
@@ -130,7 +129,6 @@ body {
   word-wrap: break-word;
   font-size: 12px;
   font-weight: 600;
-
   line-height: 1.3333333333333333em;
   color: rgb(72, 72, 72);
   position: relative;
@@ -201,6 +199,11 @@ body {
   border-color: initial;
   border-image: initial;
 }
+
+/* favorited heart color
+ .heart {
+  color: #ff5b60
+} */
 
 .listingDetailsContainer {
   padding-top: 8px;
@@ -512,6 +515,7 @@ div .modalTitle {
   border-style: solid;
   background: rgb(255, 90, 95);
   border-color: transparent;
+  cursor: pointer;
 }
 
 .signUpLogo {
@@ -556,4 +560,5 @@ div .modalTitle {
   line-height: 1.375em;
   color: #008489;
   text-align: left;
+  cursor: pointer;
 }
