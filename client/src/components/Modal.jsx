@@ -79,7 +79,7 @@ const fb = () => (
 
 const google = () => (
   <div aria-busy="false">
-    <span class="_1cjbe3z7">
+    <span>
       <div
         style={{
           margin: '0px auto',
@@ -87,7 +87,7 @@ const google = () => (
           justifyContent: 'center',
         }}
       >
-        <div class="_ni9axhe">
+        <div>
           <div style={{ marginRight: '12px' }}>
             <svg
               viewBox="0 0 18 18"
@@ -123,7 +123,7 @@ const google = () => (
             </svg>
           </div>
         </div>
-        <div class="_ni9axhe">Continue with Google</div>
+        <div>Continue with Google</div>
       </div>
     </span>
   </div>
@@ -213,30 +213,4 @@ export default function Modal(props) {
   ) : (
     <div />
   );
-} /*
-  constructor(props) {
-    super(props);
-    this.state = {
-      closeModal: true,
-    };
-
-    closeModal (){
-
-    }
-  }
-
-  render() {
-    return this.props.modalState === true ? saveToList() : <div />;
-    // <div>
-    //   <div>Close</div>
-    //   <div>Save to list</div>
-    //   <div>Facebook</div>
-    //   <div>Google</div>
-    //   or
-    //   <div>Sign up</div>
-    // </div>
-  }
 }
-*/
-
-//export default Modal;
