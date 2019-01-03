@@ -29,7 +29,7 @@ class ShowMore extends React.Component {
     ) : (
       <div>
         <div
-          className="showMore"
+          className="showMoreAC"
           onClick={() => {
             this.props.showMore();
             this.hasSeenMore();

@@ -3,10 +3,10 @@ import { relative } from 'path';
 
 const closeButton = closeHandler => {
   return (
-    <div className="closeDiv">
+    <div className="closeDivAC">
       <button
         type="button"
-        className="closeModalButton"
+        className="closeModalButtonAC"
         aria-busy="false"
         onClick={closeHandler}
         style={{ padding: '0px', margin: '0px' }}
@@ -36,13 +36,12 @@ const closeButton = closeHandler => {
 const fb = () => (
   <button
     type="submit"
-    className="fb"
+    className="fbAC"
     aria-busy="false"
     style={{ marginBottom: '8px' }}
   >
-    <span className="_1cjbe3z7">
+    <span>
       <div
-        className="_qtix31"
         style={{
           margin: '0px auto',
           display: 'flex',
@@ -50,7 +49,7 @@ const fb = () => (
           justifyContent: 'center',
         }}
       >
-        <div className="_ni9axhe">
+        <div>
           <div style={{ marginRight: '12px' }}>
             <svg
               viewBox="0 0 32 32"
@@ -71,7 +70,7 @@ const fb = () => (
             </svg>
           </div>
         </div>
-        <div className="_ni9axhe">Continue with Facebook</div>
+        <div>Continue with Facebook</div>
       </div>
     </span>
   </button>
@@ -132,19 +131,19 @@ const google = () => (
 const saveToList = (closeHandler, image, title, rating, reviews, place) => {
   //console.log('id', id);
   return (
-    <div className="modalBackground">
-      <div className="modalContainer">
-        <div className="modal">
+    <div className="modalBackgroundAC">
+      <div className="modalContainerAC">
+        <div className="modalAC">
           {closeButton(closeHandler)}
-          <div className="save">Save to list</div>
+          <div className="saveAC">Save to list</div>
           <div>
             <div>{fb()}</div>
-            <div className="google">{google()}</div>
-            <div className="orContainer">
-              <div className="or">or</div>
+            <div className="googleAC">{google()}</div>
+            <div className="orContainerAC">
+              <div className="orAC">or</div>
             </div>
-            <div className="signUp">
-              <div className="signUpLogo">
+            <div className="signUpAC">
+              <div className="signUpLogoAC">
                 <svg
                   viewBox="0 0 24 24"
                   role="presentation"
@@ -167,26 +166,26 @@ const saveToList = (closeHandler, image, title, rating, reviews, place) => {
               </div>
               Sign up with Email
             </div>
-            <div className="line" />
-            <div className="modalFooter">
-              <div className="modalFooterText">
-                <div className="member">Already have an Airbnb account? </div>
-                <div className="logIn">Log in</div>
+            <div className="lineAC" />
+            <div className="modalFooterAC">
+              <div className="modalFooterTextAC">
+                <div className="memberAC">Already have an Airbnb account? </div>
+                <div className="logInAC">Log in</div>
               </div>
             </div>
           </div>
           <div>
-            <div className="smallListingOuter">
-              <div className="smallListingInner">
-                <div className="smallListingImageContainer">
-                  <img src={image} className="smallListingImage" />
+            <div className="smallListingOuterAC">
+              <div className="smallListingInnerAC">
+                <div className="smallListingImageContainerAC">
+                  <img src={image} className="smallListingImageAC" />
                 </div>
                 <div>
-                  <div className="modalTitle">{title}</div>
-                  <div className="modalPlace">{place}</div>
-                  <div className="modalRating">
-                    <div className="modalStars">{rating} </div>
-                    <div className="modalReviews">{reviews} reviews</div>
+                  <div className="modalTitleAC">{title}</div>
+                  <div className="modalPlaceAC">{place}</div>
+                  <div className="modalRatingAC">
+                    <div className="modalStarsAC">{rating} </div>
+                    <div className="modalReviewsAC">{reviews} reviews</div>
                   </div>
                 </div>
               </div>

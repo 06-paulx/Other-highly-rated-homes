@@ -18,7 +18,7 @@ class App extends React.Component {
   componentDidMount() {
     $.ajax({
       method: 'GET',
-      url: '/api/listing/' + this.props.id + '/otherlistings',
+      url: 'http://localhost:3012/' + this.props.id + '/otherlistings',
       data: { num: 4 },
       success: listings => {
         this.setState({
@@ -31,7 +31,7 @@ class App extends React.Component {
   showMoreHomes() {
     $.ajax({
       method: 'GET',
-      url: '/api/listing/' + this.props.id + '/otherlistings',
+      url: 'http://localhost:3012/' + this.props.id + '/otherlistings',
       data: { num: 12 },
       success: listings => {
         this.setState({
@@ -44,8 +44,8 @@ class App extends React.Component {
   render() {
     // console.log('listing', this.state.otherListings);
     return (
-      <div className="overallContainer">
-        <span className="otherListingsTitle">Other highly rated homes</span>
+      <div className="overallContainerAC">
+        <span className="otherListingsTitleAC">Other highly rated homes</span>
         <OtherListings listings={this.state.otherListings} />
 
         <ShowMore showMore={this.showMoreHomes} />

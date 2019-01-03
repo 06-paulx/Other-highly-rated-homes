@@ -1,21 +1,23 @@
 body {
   margin: 0;
+  font-family: circular, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.otherListingsApp {
+.otherListingsAppAC {
   font-family: circular, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   padding: 12px;
   line-height: 1.43;
 }
 
-.overallContainer {
+.overallContainerAC {
   margin: 48px auto;
   font-size: 14px;
   line-height: 1.43;
 }
 
-.otherListingsContainer {
+.otherListingsContainerAC {
   font-family: circular, Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: row;
@@ -27,14 +29,14 @@ body {
   margin-right: -8px;
 }
 
-.otherListingsTitle {
+.otherListingsTitleAC {
   font-family: circular, Helvetica, Arial, sans-serif;
   font-size: 24px;
   color: #484848;
   font-weight: 800;
 }
 
-.singleListing {
+.singleListingAC {
   padding: 0 8px;
   font-size: 14px;
   line-height: 1.43;
@@ -47,34 +49,34 @@ body {
 }
 
 @media (min-width: 744px) {
-  .singleListing {
+  .singleListingAC {
     width: 50%;
   }
-  .overallContainer {
+  .overallContainerAC {
     padding-right: 24px;
     padding-left: 24px;
     max-width: 696px;
   }
-  .overallContainer .otherListingsTitle {
+  .overallContainerAC .otherListingsTitleAC {
     font-size: 36px;
     line-height: 40px;
   }
-  .otherListingsContainer {
+  .otherListingsContainerAC {
     margin-top: 48px;
   }
 }
 
 @media (min-width: 1128px) {
-  .overallContainer {
+  .overallContainerAC {
     max-width: 1080px;
   }
-  .singleListing {
+  .singleListingAC {
     width: 25%;
     justify-content: flex-start;
   }
 }
 
-.showMore {
+.showMoreAC {
   color: #a61d55;
   font-weight: 600;
   line-height: 1.375em;
@@ -82,25 +84,25 @@ body {
   cursor: pointer;
 }
 
-.showMore:hover {
+.showMoreAC:hover {
   text-decoration: underline;
 }
 
-.listingImage {
+.listingImageAC {
   height: auto;
   background-size: cover;
   border-radius: 3px;
   width: 100%;
 }
 
-.imageContainer {
+.imageContainerAC {
   position: relative;
   width: 100%;
   z-index: 0;
   overflow: hidden;
 }
 
-.listingRating {
+.listingRatingAC {
   display: flex;
   flex-direction: row;
   line-height: 21px;
@@ -108,7 +110,7 @@ body {
   margin-right: 2px;
 }
 
-.reviewRatingContainer {
+.reviewRatingContainerAC {
   display: flex;
   flex-direction: row;
   cursor: pointer;
@@ -124,7 +126,7 @@ body {
   position: relative;
   top: 5px;
 }
-.listingReviews {
+.listingReviewsAC {
   margin: 0px;
   word-wrap: break-word;
   font-size: 12px;
@@ -135,12 +137,12 @@ body {
   bottom: 3px;
 }
 
-.star,
-.greyStar {
+.starAC,
+.greyStarAC {
   font-size: 9px;
 }
 
-.listingTitle {
+.listingTitleAC {
   margin: 0;
   word-wrap: break-word;
   font-size: 16px;
@@ -151,12 +153,12 @@ body {
   overflow: hidden;
 }
 
-.listingPlus {
+.listingPlusAC {
   color: rgb(255, 255, 255);
   font-weight: 800;
 }
 
-.plusBackground {
+.plusBackgroundAC {
   font-size: 12px;
   line-height: 16px;
   letter-spacing: normal;
@@ -168,14 +170,14 @@ body {
   padding: 0px 4px;
 }
 
-.listingBedContainer {
+.listingBedContainerAC {
   text-overflow: ellipsis;
   white-space: nowrap;
   padding-left: 4px;
   overflow: hidden;
 }
 
-.listingBed {
+.listingBedAC {
   overflow-wrap: break-word;
   font-size: 12px;
   font-weight: 800;
@@ -184,14 +186,14 @@ body {
   margin: 0px;
 }
 
-.heartContainer {
+.heartContainerAC {
   position: absolute;
   right: 16px;
   top: 16px;
   z-index: 2;
 }
 
-.heartButton {
+.heartButtonAC {
   background-color: transparent;
   cursor: pointer;
   border-width: 0px;
@@ -205,12 +207,12 @@ body {
   color: #ff5b60
 } */
 
-.listingDetailsContainer {
+.listingDetailsContainerAC {
   padding-top: 8px;
   height: 108px;
 }
 
-.listingPrice {
+.listingPriceAC {
   line-height: 20.02px;
 }
 
@@ -220,7 +222,7 @@ body {
   vertical-align: middle;
 } */
 
-.modal {
+.modalAC {
   position: absolute;
   top: 45px;
   left: 50%;
@@ -232,21 +234,21 @@ body {
   margin-bottom: 50px;
 }
 
-.modalContainer {
+.modalContainerAC {
   position: relative;
   margin: auto;
   box-sizing: border-box;
 }
 
 @media (max-width: 744px) {
-  .modalContainer {
+  .modalContainerAC {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
   }
-  .modal {
+  .modalAC {
     top: 0;
     max-width: none;
     overflow-y: auto;
@@ -255,16 +257,16 @@ body {
     height: 100%;
     box-sizing: border-box;
   }
-  .modalBackground {
+  .modalBackgroundAC {
     background: none;
   }
 }
 
-.closeDiv {
+.closeDivAC {
   margin-bottom: 24px;
 }
 
-.closeModalButton {
+.closeModalButtonAC {
   cursor: pointer;
   background-color: transparent;
   color: buttontext;
@@ -274,7 +276,7 @@ body {
   border-image: initial;
 }
 
-.modalBackground {
+.modalBackgroundAC {
   position: fixed;
   z-index: 2000;
   top: 0px;
@@ -286,7 +288,7 @@ body {
   overflow-y: auto;
 }
 
-.save {
+.saveAC {
   overflow-wrap: break-word;
   font-size: 18px;
   font-weight: 800;
@@ -296,7 +298,7 @@ body {
   box-sizing: border-box;
 }
 
-.fb {
+.fbAC {
   cursor: pointer;
   transition-property: background, border-color, color;
   transition-duration: 0.2s;
@@ -322,7 +324,7 @@ body {
   border-color: transparent;
 }
 
-.google {
+.googleAC {
   cursor: pointer;
   transition-property: background, border-color, color;
   transition-duration: 0.2s;
@@ -349,7 +351,7 @@ body {
   box-sizing: border-box;
 }
 
-.smallListingOuter {
+.smallListingOuterAC {
   width: 568px;
   cursor: pointer;
   padding: 24px 32px;
@@ -360,18 +362,18 @@ body {
 }
 
 @media (max-width: 744px) {
-  .smallListingOuter {
+  .smallListingOuterAC {
     display: none;
   }
 }
 
-.smallListingInner {
+.smallListingInnerAC {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
 }
 
-.smallListingImage {
+.smallListingImageAC {
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -379,7 +381,7 @@ body {
   box-sizing: border-box;
 }
 
-.smallListingImageContainer {
+.smallListingImageContainerAC {
   padding-right: 16px;
   vertical-align: top;
   width: 120px;
@@ -387,7 +389,7 @@ body {
   box-sizing: border-box;
 }
 
-.smallListingShadow {
+.smallListingShadowAC {
   right: 0px;
   left: 0px;
   background-color: rgb(255, 255, 255);
@@ -398,7 +400,7 @@ body {
   transition: top 0.3s ease-in-out 0s;
 }
 
-.modalRating {
+.modalRatingAC {
   font-family: circular, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   display: flex;
@@ -413,17 +415,17 @@ body {
   bottom: 3px;
 }
 
-.modalStars .star svg {
+.modalStarsAC .starAC svg {
   font-size: 12px;
   margin: 1px;
 }
 
-.modalStars .greyStar svg {
+.modalStarsAC .greyStarAC svg {
   font-size: 12px;
   margin: 1px;
 }
 
-.modalStars {
+.modalStarsAC {
   display: flex;
   flex-direction: row;
   line-height: 21px;
@@ -434,7 +436,7 @@ body {
   font-weight: 400;
 }
 
-.modalReviews {
+.modalReviewsAC {
   font-family: circular, Helvetica, Arial, sans-serif;
   margin: 0px;
   word-wrap: break-word;
@@ -446,7 +448,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-div .modalTitle {
+div .modalTitleAC {
   font-family: circular, Helvetica, Arial, sans-serif;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -457,7 +459,7 @@ div .modalTitle {
   color: #484848;
 }
 
-.modalPlace {
+.modalPlaceAC {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.2857142857142858em;
@@ -466,7 +468,7 @@ div .modalTitle {
   margin-bottom: 8px;
 }
 
-.or {
+.orAC {
   font-size: 14px;
   font-weight: 600;
   line-height: 1.28571em;
@@ -474,7 +476,7 @@ div .modalTitle {
   padding: 0 16px;
 }
 
-.orContainer {
+.orContainerAC {
   margin-top: 16px;
   margin-bottom: 16px;
   box-sizing: border-box;
@@ -482,8 +484,8 @@ div .modalTitle {
   justify-content: center;
 }
 
-.orContainer::before,
-.orContainer::after {
+.orContainerAC::before,
+.orContainerAC::after {
   content: '';
   border-bottom: 1px solid #e4e4e4;
   display: block;
@@ -493,7 +495,7 @@ div .modalTitle {
   position: relative;
 }
 
-.signUp {
+.signUpAC {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -518,11 +520,11 @@ div .modalTitle {
   cursor: pointer;
 }
 
-.signUpLogo {
+.signUpLogoAC {
   margin-right: 12px;
 }
 
-.line {
+.lineAC {
   margin-top: 16px;
   margin-bottom: 16px;
   border-bottom-width: var(--border-rule-border-width, 1px);
@@ -530,20 +532,20 @@ div .modalTitle {
   border-bottom-style: solid;
 }
 
-.modal footer {
+.modalAC footer {
   position: relative;
   width: 100%;
   box-sizing: border-box;
 }
 
-.modalFooterText {
+.modalFooterTextAC {
   text-align: center;
   justify-content: center;
   display: flex;
   flex-direction: row;
 }
 
-.member {
+.memberAC {
   margin-right: 8px;
   word-wrap: break-word;
   font-size: 16px;
@@ -552,7 +554,7 @@ div .modalTitle {
   color: #484848;
 }
 
-.logIn {
+.logInAC {
   margin: 0px;
   word-wrap: break-word;
   font-size: 16px;

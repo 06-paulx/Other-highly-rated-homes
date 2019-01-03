@@ -2,10 +2,10 @@ import React from 'react';
 import Modal from './Modal.jsx';
 
 const heart = (
-  <div className="heartContainer">
+  <div className="heartContainerAC">
     <button
       type="button"
-      className="heartButton"
+      className="heartButtonAC"
       style={{ padding: '8px', margin: '-8px' }}
     >
       <svg
@@ -36,7 +36,7 @@ const defaultStarColor = 'rgb(166, 29, 85)';
 const modalStarColor = 'rgb(0, 132, 137)';
 
 const getStar = (key, color) => (
-  <span className="star" key={key}>
+  <span className="starAC" key={key}>
     <svg
       viewBox="0 0 1000 1000"
       role="presentation"
@@ -74,7 +74,7 @@ const getStar = (key, color) => (
 // );
 
 const getGreyStar = key => (
-  <span className="greyStar" key={key}>
+  <span className="greyStarAC" key={key}>
     <svg
       viewBox="0 0 1000 1000"
       role="presentation"
@@ -141,7 +141,7 @@ class OtherListings extends React.Component {
 
   render() {
     return (
-      <div className="otherListingsContainer">
+      <div className="otherListingsContainerAC">
         <Modal
           modalOpen={this.state.modalOpen}
           open={this.openModal}
@@ -156,36 +156,36 @@ class OtherListings extends React.Component {
           // console.log(props.listings, 'OTHER');
           const numBeds = listingObj.bed > 1 ? 'BEDS' : 'BED';
           return (
-            <div key={index} className="singleListing">
-              <div className="imageContainer">
-                <img src={listingObj.image_url} className="listingImage" />
+            <div key={index} className="singleListingAC">
+              <div className="imageContainerAC">
+                <img src={listingObj.image_url} className="listingImageAC" />
 
                 <div onClick={() => this.openModal(listingObj)}>{heart}</div>
               </div>
 
-              <div className="listingDetailsContainer">
+              <div className="listingDetailsContainerAC">
                 <div>
-                  <span className="plusBackground">
-                    <span className="listingPlus">PLUS</span>
+                  <span className="plusBackgroundAC">
+                    <span className="listingPlusAC">PLUS</span>
                   </span>
-                  <span className="listingBedContainer">
-                    <span className="listingBed">
+                  <span className="listingBedContainerAC">
+                    <span className="listingBedAC">
                       VERIFIED · {listingObj.bed} {numBeds}
                     </span>
                   </span>
                 </div>
 
-                <div className="listingTitle">{listingObj.listing_title}</div>
+                <div className="listingTitleAC">{listingObj.listing_title}</div>
 
-                <div className="listingPrice">
+                <div className="listingPriceAC">
                   ${listingObj.listing_price} per night
                 </div>
-                <div className="reviewRatingContainer">
-                  <div className="listingRating">
+                <div className="reviewRatingContainerAC">
+                  <div className="listingRatingAC">
                     {listingRating(listingObj.rating, defaultStarColor)}
                   </div>
                   {/* {star}star{halfStar}halfstar{greyStar}greyStar */}
-                  <div className="listingReviews">{listingObj.reviews}</div>
+                  <div className="listingReviewsAC">{listingObj.reviews}</div>
                 </div>
               </div>
             </div>
