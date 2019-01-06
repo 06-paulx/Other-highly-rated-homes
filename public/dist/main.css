@@ -98,7 +98,6 @@ body {
 .imageContainerAC {
   position: relative;
   width: 100%;
-  z-index: 0;
   overflow: hidden;
 }
 
@@ -190,7 +189,6 @@ body {
   position: absolute;
   right: 16px;
   top: 16px;
-  z-index: 2;
 }
 
 .heartButtonAC {

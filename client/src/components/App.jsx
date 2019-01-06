@@ -18,7 +18,7 @@ class App extends React.Component {
   componentDidMount() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3012/' + this.props.id + '/otherlistings',
+      url: 'http://3.17.67.124/' + this.props.id + '/otherlistings',
       data: { num: 4 },
       success: listings => {
         this.setState({
@@ -31,7 +31,7 @@ class App extends React.Component {
   showMoreHomes() {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3012/' + this.props.id + '/otherlistings',
+      url: 'http://3.17.67.124/' + this.props.id + '/otherlistings',
       data: { num: 12 },
       success: listings => {
         this.setState({
